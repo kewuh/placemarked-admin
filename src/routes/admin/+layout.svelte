@@ -172,7 +172,7 @@
   <div class="admin-layout">
     <div class="admin-header">
       <div class="admin-header-content">
-        <h1>UK Queering Map - Admin</h1>
+        <h1>Placemarked - Admin</h1>
         <div class="admin-nav">
           <a href="/">View Map</a>
           <button on:click={handleLogout}>Logout</button>
