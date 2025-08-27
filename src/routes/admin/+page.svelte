@@ -138,7 +138,7 @@
 </script>
 
 <svelte:head>
-  <title>Admin - UK Queering Map</title>
+  <title>Placemarked - Admin</title>
 </svelte:head>
 
 <div class="admin-container">
