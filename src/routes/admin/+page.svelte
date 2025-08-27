@@ -144,7 +144,7 @@
 <div class="admin-container">
   <div class="admin-content">
     <div class="admin-header-section">
-      <h1>Admin Panel</h1>
+      <h1>Placemarked - Admin</h1>
       <div class="admin-links">
         <a href="/admin/users">Manage Users</a>
         <a href="/">← Back to Map</a>
