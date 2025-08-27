@@ -1,54 +1,49 @@
 <script lang="ts">
-  import '$lib/style.css';
-  import '$lib/maplibre_style.css';
-  import '$lib/navbar_buttons.css';
-  import AddOverlay from '$lib/AddOverlay.svelte';
-  import InfoOverlay from '$lib/InfoOverlay.svelte';
-  import Map from '$lib/Map.svelte';
-  import NavBar from '$lib/NavBar.svelte';
-  import { addOverlayVisible, infoOverlayVisible } from '../stores';
-
-  import DonatePopup from '$lib/DonatePopup.svelte';
+  import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
+  
+  onMount(() => {
+    // Redirect to admin interface
+    goto("/admin");
+  });
 </script>
 
 <svelte:head>
-  <title>Placemarked</title>
-  <meta
-    name="description"
-    content="The border isn't a line. It's a system. Not just at airports, but in classrooms, clinics, break rooms, and back seats of police vans. Placemarked maps its reach: where care is denied, lives are questioned, and joy still insists on showing up."
-  />
-
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:url"
-    content="https://migrant-d0hmw57eq-davids-projects-b5d97cc3.vercel.app/"
-  />
-  <meta property="og:title" content="Placemarked" />
-  <meta
-    property="og:description"
-    content="The border isn't a line. It's a system. Not just at airports, but in classrooms, clinics, break rooms, and back seats of police vans. Placemarked maps its reach: where care is denied, lives are questioned, and joy still insists on showing up."
-  />
-  <meta property="og:site_name" content="Placemarked" />
-  <meta property="og:locale" content="en_US" />
-  <meta
-    name="google-site-verification"
-    content="J-oUgPBYWRXkPhvqF8XBrDtrA-qu8pXiMiYPd3QrfhE"
-  />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Placemarked" />
-  <meta
-    name="twitter:description"
-    content="The border isn't a line. It's a system. Not just at airports, but in classrooms, clinics, break rooms, and back seats of police vans. Placemarked maps its reach: where care is denied, lives are questioned, and joy still insists on showing up."
-  />
+  <title>Placemarked - Admin Tool</title>
 </svelte:head>
 
-<NavBar></NavBar>
-{#if $infoOverlayVisible}
-  <InfoOverlay></InfoOverlay>
-{/if}
-{#if $addOverlayVisible}
-  <AddOverlay></AddOverlay>
-{/if}
-<Map></Map>
-<DonatePopup></DonatePopup>
+<div class="loading-container">
+  <div class="loading-spinner"></div>
+  <p>Redirecting to admin interface...</p>
+</div>
+
+<style>
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0066cc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  p {
+    color: #666;
+    font-size: 16px;
+  }
+</style>

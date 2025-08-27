@@ -1,0 +1,31 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/?(?:/__data.json)?$",
+			"dest": "/"
+		},
+		{
+			"src": "^/admin/?(?:/__data.json)?$",
+			"dest": "/admin"
+		},
+		{
+			"src": "^/admin/users/?(?:/__data.json)?$",
+			"dest": "/admin/users"
+		},
+		{
+			"src": "/.*",
+			"dest": "/![-]/catchall"
+		}
+	],
+	"overrides": {}
+}

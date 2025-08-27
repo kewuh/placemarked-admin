@@ -1,0 +1,1 @@
+import{createClient as s}from"@supabase/supabase-js";s("https://fgdkqkgedoltqsseouqy.supabase.co","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnZGtxa2dlZG9sdHFzc2VvdXF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYxNDYzOTQsImV4cCI6MjA3MTcyMjM5NH0.KfURVgqaqE3fOakjfQyjrxRxenhdUXA6sl3Gq-FEeFg");
